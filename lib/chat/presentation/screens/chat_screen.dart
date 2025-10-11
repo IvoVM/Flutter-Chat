@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/chat/presentation/components/message.dart';
+import 'package:flutter_application_2/chat/presentation/components/other_message.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -27,14 +29,19 @@ class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SafeArea(
         child: Column(
           children: [
             Expanded(
               child: ListView.builder(
+                itemCount: 10, // 👈 solo 10 ítems
                 itemBuilder: (context, index) {
-                  return Text('indice');
+                  if (index.isEven) {
+                    return Messages();
+                  } else {
+                    return OtherMessages();
+                  }
                 },
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/chat/presentation/components/message.dart';
+import 'package:flutter_application_2/chat/presentation/components/message_field_box.dart';
 import 'package:flutter_application_2/chat/presentation/components/other_message.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -45,6 +46,7 @@ class _ChatView extends StatelessWidget {
                 },
               ),
             ),
+            MessageFieldBox(),
           ],
         ),
       ),
